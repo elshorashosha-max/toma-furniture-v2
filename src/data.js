@@ -48,7 +48,11 @@ export function getCategories(products) {
 }
 
 export function formatPrice(price) {
-  return new Intl.NumberFormat("ar-EG", { maximumFractionDigits: 2 }).format(price) + " ج.م";
+  return new Intl.NumberFormat("ar-SA", {
+    style: "currency",
+    currency: "SAR",
+    maximumFractionDigits: 2,
+  }).format(price);
 }
 
 export function getProductPrice(product) {
